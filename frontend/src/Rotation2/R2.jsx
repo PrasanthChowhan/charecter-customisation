@@ -41,10 +41,15 @@ function R2() {
   const random = (states, Assets) => {
     const firstDir = Object.keys(Assets);
     var randomDict = {};
-    for (var i = 0; i < firstDir.length; i++) {
-      const secondDir = Object.keys(Assets[firstDir[i]]);
-      const addAt = Math.floor(Math.random() * (secondDir.length - 1));
-      for (var j = 0; j < secondDir.length; j++) {
+    for (var i = 0; i <= firstDir.length-1; i++) {
+      const secondDir = Object.keys(Assets?.[firstDir[i]]);
+      const addAt = Math.floor(Math.random() * (secondDir.length));
+      // console.log(secondDir.length,'length of second dr')
+      const secondDirLen = secondDir.length
+      for (var j = 0; j <= secondDirLen-1; j++) {
+        console.log(secondDirLen, j,'len')
+
+        console.log(Assets[firstDir[i]][secondDir[j]]);
         if (j == addAt) {
           randomDict[firstDir[i]] = Assets[firstDir[i]][secondDir[j]];
           break;
