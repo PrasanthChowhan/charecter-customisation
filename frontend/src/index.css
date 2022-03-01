@@ -1,19 +1,101 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins, Geneva, Tahoma, sans-serif;
+}
+body {
+  background-color: rgb(221, 171, 163);
 }
 
+.wrap {
+  width: 1200px;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+.alpaca {
+  display: flex;
+}
 
+.alpacaArt {
+  width: 450px;
+  height: 450px;
+}
+img {
+  width: 100%;
+  /* display: none; */
+}
+button {
+  padding: 0.75em 1.5em;
+  border-radius: 2em;
+  margin: 0.5em 0.75em;
+  border: none;
+  outline: 2px solid steelblue;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 800;
+  letter-spacing: 1px;
+  align-items: center;
+  justify-content: center;
+}
+.download {
+  display: flex;
+  justify-content: center;
+}
+.download button {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+}
+.download button:hover,
+.download button:focus {
+  background-color: transparent;
+  color: black;
+}
+.download button:active{
+  background-color: #5596f6;
+  color: white;
+}
+.download button img {
+  width: initial;
+  margin-left: 0.5em;
+  /* display : none; */
+}
 
-/* .wrap{
-    width: 80vw;
-    height: 80vh;
-    background-color: aqua;
-    margin: 50px auto ;
-} */
-h1{
-    font-size: 20px;
-    text-align: center;
-    color: black;
+button:hover,
+button:focus,
+button:active,
+.active {
+  background-color: #5596f6;
+  color: white;
+}
+h3 {
+  font-weight: bolder;
+}
+h1 {
+  font-size: 2.5rem;
+  padding-left: 1.25rem;
+}
+
+canvas {
+  position: relative;
+}
+
+.right {
+  /* background-color: rgb(195, 186, 186); */
+
+  padding-inline: 80px;
+}
+.right-top {
+  margin-bottom: 1rem;
 }

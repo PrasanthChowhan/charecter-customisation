@@ -1,3 +1,5 @@
+
+
 export default {
   accessories: {
     earings: "../Assets/accessories/earings.png",

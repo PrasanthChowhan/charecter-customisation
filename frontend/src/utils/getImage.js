@@ -1,5 +1,5 @@
 // export const getImage = async (location, set) => {
-//   console.log(location);
+  // console.log(location);
 //   const sliced = location.split("/");
 //   const log = await import(`../Assets/${sliced[2]}/${sliced[3]}`).then((img) => {
 //     set(img.default);
@@ -12,17 +12,17 @@
 
 
 //delete from heree
-export const getImage = (location, callback) => {
-  console.log(location);
+export const getImage = (location, set) => {
+  // console.log(location);
   const sliced = location.split("/");
   const log =  import(`../Assets/${sliced[2]}/${sliced[3]}`).then((img) => {
-    callback(img.default)
-    console.log(callback)
-    console.log('inside import')
+    set(img.default)
+    // console.log(callback)
+    // console.log('inside import')
     
   });
-  console.log('set')
-  console.log(log)
+  // console.log('set')
+  // console.log(log)
 };
 
 
