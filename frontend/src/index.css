@@ -5,7 +5,7 @@
   font-family: poppins, Geneva, Tahoma, sans-serif;
 }
 body {
-  background-color: rgb(221, 171, 163);
+  background-color: rgba(63, 54, 60, 0.233);
 }
 
 .wrap {
@@ -38,7 +38,7 @@ button {
   border-radius: 2em;
   margin: 0.5em 0.75em;
   border: none;
-  outline: 2px solid steelblue;
+  outline: 2px solid rgba(0, 140, 255, 0.438);
   background-color: transparent;
   cursor: pointer;
   font-weight: 800;
@@ -46,27 +46,27 @@ button {
   align-items: center;
   justify-content: center;
 }
-.download {
+.actions {
   display: flex;
   justify-content: center;
 }
-.download button {
+.actions button {
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.15rem;
 }
-.download button:hover,
-.download button:focus {
+.actions button:hover,
+.actions button:focus {
   background-color: transparent;
   color: black;
 }
-.download button:active{
+.actions button:active{
   background-color: #5596f6;
   color: white;
 }
-.download button img {
+.actions button img {
   width: initial;
   margin-left: 0.5em;
   /* display : none; */
@@ -87,7 +87,7 @@ h1 {
   padding-left: 1.25rem;
 }
 
-canvas {
+.left {
   position: relative;
 }
 

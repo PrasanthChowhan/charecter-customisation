@@ -1,5 +1,5 @@
 export {default as randomImg} from './random.png'
-export {default as downloadImg} from './download.png'
+export {default as downloadIcon} from './download.png'
 
 
 // default images , change the location to change default image when page loads

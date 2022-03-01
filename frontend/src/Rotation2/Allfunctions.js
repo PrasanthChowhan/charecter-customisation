@@ -1,7 +1,9 @@
-const download =() =>{
-  console.log(document.getElementsByTagName('canvas'))
-}
-
+const downloadImg = () => {
+  const alpacaArt = document.querySelector(".alpacaArt");
+  import("save-html-as-image").then((method) => {
+    method.saveAsPng(alpacaArt, { filename: "my-art.png", printDate: false });
+  });
+};
 
 const customizeImg = (states) => (e) => {
   const location = e.target.value;
@@ -34,7 +36,7 @@ const change = (set, what) => (event) => {
   // console.log(event);
   // console.log(document.getElementsByClassName('right-top').classList.toggle('active'))
   // console.log(document.getElementsByClassName('right-top')[0].childNodes) ;
-  const activeEl=  document.getElementsByClassName("active")[0]
+  const activeEl = document.getElementsByClassName("active")[0];
   activeEl && activeEl.classList.remove("active");
   document.getElementById(event.target.id).classList.add("active");
 };
@@ -57,7 +59,11 @@ const Btnmaker = (props) => {
           <button
             onClick={props.func}
             id={key}
+            // key={Math.random() * Math.random(99) * new Date().getTime()}
             value={props.location[key]}
+            // {...console.log(
+            //   Math.random() * Math.random() * new Date().getTime()
+            // )}
             // className = {'active'}
             className={props.giveClass && props.location[key].split("/")[2]}
           >
@@ -69,4 +75,4 @@ const Btnmaker = (props) => {
   );
 };
 
-export { download,change, getImage, Btnmaker, Imagemaker, customizeImg };
+export { change, getImage, Btnmaker, Imagemaker, customizeImg, downloadImg };

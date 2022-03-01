@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import Assets from "../utils/Assets";
+
 import {
-  getImage,
+  downloadImg,
   Btnmaker,
   change,
   Imagemaker,
   customizeImg,
-  download
+  getImage,
 } from "./Allfunctions.js";
 import {
-  downloadImg,
+  downloadIcon,
   randomImg,
   backgroundImg,
   accessoriesImg,
@@ -36,23 +37,48 @@ function R2() {
     mouth: useState(mouthImg),
     eyes: useState(eyesImg),
   };
+  var run = 0;
+  const random = (states, Assets) => {
+    const firstDir = Object.keys(Assets);
+    var randomDict = {};
+    for (var i = 0; i < firstDir.length; i++) {
+      const secondDir = Object.keys(Assets[firstDir[i]]);
+      const addAt = Math.floor(Math.random() * (secondDir.length - 1));
+      for (var j = 0; j < secondDir.length; j++) {
+        if (j == addAt) {
+          randomDict[firstDir[i]] = Assets[firstDir[i]][secondDir[j]];
+          break;
+        }
+      }
+    }
+    Object.keys(randomDict).map((item) => {
+      getImage(randomDict[item], states[item][1]);
+    });
+    setTimeout(() => {
+      if (run < 3) {
+        random(states, Assets);
+        run++;
+      }
+    }, 300);
+  };
 
   return (
     <div className="wrap">
+      <h3>know how to do</h3>
       <h1>Alpaca Generator</h1>
       <div className="alpaca">
         <div className="left">
-          <canvas>
+          <div className="alpacaArt">
             <Imagemaker states={states} />
-          </canvas>
-          <div className="download">
-            <button  onClick={download}>
+          </div>
+          <div className="actions">
+            <button onClick={() => downloadImg()}>
               Download
-              <img src={downloadImg} alt="download-icon" />
-
+              <img src={downloadIcon} alt="download-icon" />
             </button>
-            <button>
-              Random <img src={randomImg} alt = 'random image'/>
+
+            <button onClick={() => random(states, Assets)}>
+              Random <img src={randomImg} alt="random image" />
             </button>
           </div>
         </div>
