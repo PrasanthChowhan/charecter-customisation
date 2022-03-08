@@ -41,13 +41,12 @@ function R2() {
   const random = (states, Assets) => {
     const firstDir = Object.keys(Assets);
     var randomDict = {};
-    for (var i = 0; i <= firstDir.length-1; i++) {
+    for (var i = 0; i <= firstDir.length - 1; i++) {
       const secondDir = Object.keys(Assets?.[firstDir[i]]);
-      const addAt = Math.floor(Math.random() * (secondDir.length));
-      // console.log(secondDir.length,'length of second dr')
-      const secondDirLen = secondDir.length
-      for (var j = 0; j <= secondDirLen-1; j++) {
-        console.log(secondDirLen, j,'len')
+      const addAt = Math.floor(Math.random() * secondDir.length);
+      const secondDirLen = secondDir.length;
+      for (var j = 0; j <= secondDirLen - 1; j++) {
+        console.log(secondDirLen, j, "len");
 
         console.log(Assets[firstDir[i]][secondDir[j]]);
         if (j == addAt) {
@@ -69,8 +68,10 @@ function R2() {
 
   return (
     <div className="wrap">
-      <h3>know how to do</h3>
-      <h1>Alpaca Generator</h1>
+      <a href="https://youtu.be/AvOo2X9F_5s" target={"_blank"}>
+        <h3>know how to do</h3>
+      </a>
+      <h1>Character Customisation</h1>
       <div className="alpaca">
         <div className="left">
           <div className="alpacaArt">

@@ -1,12 +1,11 @@
 import React from "react";
 
-import R2 from './Rotation2/R2.jsx'
+import R2 from "./Allcode/Main.jsx";
 
 export default function App() {
-  
   return (
     <>
-     <R2/>
+      <R2 />
     </>
   );
 }
